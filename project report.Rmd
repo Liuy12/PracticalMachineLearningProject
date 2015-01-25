@@ -46,7 +46,7 @@ with(training,table(user_name,classe))
 #   jeremy   1177  489  652  522  562
 #   pedro     640  505  499  469  497
 ```
-get propotion of NA or missing values to determine if a certain predicto will be removed or imputed
+Get propotion of NA or missing values to determine if a certain predicto will be removed or imputed
 ```r
 NA_prop <- sapply(training,function(i) {sum(is.na(i))/length(i)})
 table(NA_prop)
@@ -65,7 +65,7 @@ train_complete<-train_complete[,index2]
 index3 <- 7:length(index2)
 train_complete<-train_complete[,index3]
 ```
-exam the correlation between different covariates and only select one feature among multiple correlated features, and remove the covarites with low viability 
+Exam the correlation between different covariates and only select one feature among multiple correlated features, and remove the covarites with low viability 
 ```r
 M <- abs(cor(train_complete[,-53]))
 diag(M) <- 0
@@ -126,7 +126,7 @@ nzv
 # magnet_forearm_z      1.000000     8.5771073   FALSE FALSE
 # classe                1.469581     0.0254816   FALSE FALSE
 ```
-preprocess with pca
+Preprocess with pca
 ```r
 train_complete$classe <- as.factor(train_complete$classe)
 prepro<-preProcess(train_complete[,-40],method='pca',thresh=0.9)
@@ -165,8 +165,8 @@ print(modelfit_rf)
 sum(diag(modelfit_rf$finalModel$confusion))/nrow(train_complete)
 # [1] 0.9818061
 ggplot(modelfit_rf)
-
 ```
+![modelfit_rf_tune.png](fig/)
 Apply to test datasets
 ```r
 index5 <- index1[index2][index3][index4]
