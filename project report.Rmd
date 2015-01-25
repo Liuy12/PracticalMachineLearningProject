@@ -166,7 +166,7 @@ sum(diag(modelfit_rf$finalModel$confusion))/nrow(train_complete)
 # [1] 0.9818061
 ggplot(modelfit_rf)
 ```
-<img src="fig/modelfit_rf_tune.png" height="400px" width="300px" />
+<img src="fig/modelfit_rf_tune.png" height="200px" width="300px" />
 
 Apply to test datasets
 ```r
