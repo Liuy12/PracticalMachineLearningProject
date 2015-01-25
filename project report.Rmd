@@ -164,6 +164,14 @@ print(modelfit_rf)
 # The final value used for the model was mtry = 2.
 sum(diag(modelfit_rf$finalModel$confusion))/nrow(train_complete)
 # [1] 0.9818061
+print(head(modelfit_rf$finalModel$err.rate))
+#          OOB         A         B         C         D         E
+# [1,] 0.1819958 0.1306262 0.2341185 0.2447224 0.1738747 0.1521407
+# [2,] 0.1913496 0.1347878 0.2345733 0.2486973 0.1992481 0.1699717
+# [3,] 0.1842285 0.1269157 0.2310939 0.2313922 0.1944915 0.1690458
+# [4,] 0.1808621 0.1322085 0.2140615 0.2232174 0.1950301 0.1681006
+# [5,] 0.1672920 0.1164796 0.2058133 0.2040026 0.1833158 0.1558362
+# [6,] 0.1567485 0.1097071 0.1868163 0.1957803 0.1725991 0.1465364
 ggplot(modelfit_rf)
 ```
 <img src="fig/modelfit_rf_tune.png" height="200px" width="300px" />
