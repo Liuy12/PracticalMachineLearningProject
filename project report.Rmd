@@ -35,8 +35,8 @@ dim(testing)
 # 4         no
 # 5         no
 ```
-```r
 To see if there exists a bias class
+```r
 with(training,table(user_name,classe))
 # user_name     A    B    C    D    E
 #   adelmo   1165  776  750  515  686
